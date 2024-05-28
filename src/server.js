@@ -1,7 +1,7 @@
 require('dotenv').config({path: '../.env'})
 const express = require('express')
 const server = express() 
-const rotasTarefas = require('./router/tarefas')
+const rotasTarefas = require('./router/rotas')
 const PORT = process.env.PORT
 const BASE_ROUTE = process.env.BASE_ROUTE
 
