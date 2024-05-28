@@ -6,7 +6,6 @@ const conexao = require('./database/conexao')
 const PORT = process.env.PORT
 const BASE_ROUTE = process.env.BASE_ROUTE
 
-
 server.use(express.json())
 
 // Rotas
@@ -23,5 +22,4 @@ server.listen(PORT, () => {
     } catch (error) {
       console.error('Erro ao sincronizar tabelas:', error)
     }
-})();
-  
+})()
