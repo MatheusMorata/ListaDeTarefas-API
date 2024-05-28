@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config({path:'../../.env'});
 const Sequelize  = require('sequelize');
 
 const nome_banco = process.env.NOME_BANCO_DE_DADOS
