@@ -1,10 +1,10 @@
 require('dotenv').config({ path: '../../.env'  });
 const Sequelize  = require('sequelize');
 
-const nome_banco = process.env.DATABASE_NAME
-const user_banco = process.env.DATABASE_USER 
-const passwd_banco = process.env.DATABASE_PASSWORD
-const host_database = process.env.DATABASE_HOST
+const nome_banco = process.env.NOME_BANCO_DE_DADOS
+const user_banco = process.env.USUARIO_BANCO_DE_DADOS 
+const passwd_banco = process.env.SENHA_BANCO_DE_DADOS
+const host_database = process.env.HOST_BANCO_DE_DADOS
 
 const sequelize = new Sequelize({
     dialect: 'postgres',
