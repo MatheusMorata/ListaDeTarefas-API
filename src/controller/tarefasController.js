@@ -2,6 +2,7 @@ const model = require('../model/tarefasModel')
 
 class tarefasController{
 
+    // Função para cadastrar uma tarefa no banco de dados
     async cadastrar(tarefa){
         try{
             await model.create(tarefa)
@@ -10,6 +11,7 @@ class tarefasController{
         }
     }
 
+    // Função para receber as tarefas do banco de dados
     async visualizar(){
         try{
             const visualizar = await model.findAll()
@@ -19,6 +21,7 @@ class tarefasController{
         }
     }
 
+    // Função para alterar uma tarefa no banco de dados
     async alterar(idTarefa, novaTarefa){
         try {
             const [linhas,[tarefaAtualizada]] = await model.update(novaTarefa, {
@@ -35,6 +38,7 @@ class tarefasController{
         }
     }
 
+    // Função para deletar uma tarefa no banco de dados
     async deletar(idTarefa){
         try{
             await model.destroy({
