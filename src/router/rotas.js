@@ -28,8 +28,8 @@ router.put('/alterar/:id', async (req, res) => {
   try {
     const idTarefa = req.params.id 
     const novaTarefa = req.body
-    const resultado = await objeto.alterar(idTarefa,novaTarefa)
-    res.status(200).json({message: resultado})
+    await objeto.alterar(idTarefa,novaTarefa)
+    res.status(200).json({message: 'Alteracao efetuada com sucesso'})
   } catch (error) {
     res.status(500).json({ message: error})
   }
