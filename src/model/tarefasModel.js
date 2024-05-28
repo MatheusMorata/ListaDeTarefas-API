@@ -31,3 +31,5 @@ Tarefas.init({
     conexao,
     modelName: 'Tarefas'
 })
+
+module.exports = Tarefas
