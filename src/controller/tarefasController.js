@@ -28,6 +28,9 @@ class tarefasController{
     // Função para alterar uma tarefa no banco de dados
     async alterar(idTarefa, novaTarefa){
         try {
+            if(novaTarefa === null){    
+                throw new Error("Nenhuma tarefa foi passada.")
+            }
             const [linhas,[tarefaAtualizada]] = await model.update(novaTarefa, {
                 where: {
                     id: idTarefa
