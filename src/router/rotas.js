@@ -38,7 +38,7 @@ router.put('/alterar/:id', async (req, res) => {
 // Rota para deletar uma tarefa, por id
 router.delete('/deletar/:id', async (req, res) => {
   try {
-    const idTarefa = req.params
+    const idTarefa = req.params.id
     await objeto.deletar(idTarefa)
     res.status(200).json({message: 'Deu bom'})
   } catch (error) {
