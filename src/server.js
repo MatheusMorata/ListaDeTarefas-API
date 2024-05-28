@@ -13,15 +13,15 @@ server.use(express.json())
 server.use(BASE_ROUTE, rotasTarefas)
 
 server.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+  console.log(`Servidor rodando na porta ${PORT}`)
 });
 
 // Conexão com o banco de dados
 (async () => {
     try {
-      await conexao.sync();
+      await conexao.sync()
     } catch (error) {
-      console.error('Erro ao sincronizar tabelas:', error);
+      console.error('Erro ao sincronizar tabelas:', error)
     }
 })();
   
