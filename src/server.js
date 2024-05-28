@@ -4,6 +4,7 @@ const server = express()
 const PORT = process.env.PORT
 const BASE_ROUTE = process.env.BASE_ROUTE
 
+
 server.use(express.json())
 
 // Rotas
