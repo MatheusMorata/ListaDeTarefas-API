@@ -5,7 +5,7 @@ class tarefasController{
     // Função para cadastrar uma tarefa no banco de dados
     async cadastrar(tarefa){
         try{
-            if(tarefa.status !== 'pendente' || tarefa.status !== 'em progresso' || tarefa.status !== 'concluida'){
+            if(tarefa.status !== 'pendente' && tarefa.status && 'em progresso' && tarefa.status !== 'concluida'){
                 throw new Error('Status inválido')
             }else{
                 await model.create(tarefa)
