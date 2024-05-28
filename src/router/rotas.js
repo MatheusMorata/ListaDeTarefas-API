@@ -7,9 +7,9 @@ const objeto = new controller()
 router.post('/cadastrar', async (req, res) => {
     try {
       await objeto.cadastrar(req.body)
-      res.status(200).json({message: 'Deu bom'})
+      res.status(200).json({message: 'Cadastro efetuado com sucesso'})
     } catch (error) {
-      res.status(500).json({ message: 'Deu ruim'})
+      res.status(500).json({ message: error})
     }
 });
 
@@ -19,7 +19,7 @@ router.get('/visualizar', async (req, res) => {
     const resultado = await objeto.visualizar()
     res.status(200).json(resultado)
   } catch (error) {
-    res.status(500).json({ message: 'Deu ruim'})
+    res.status(500).json({ message: error})
   }
 });
 
@@ -28,10 +28,10 @@ router.put('/alterar/:id', async (req, res) => {
   try {
     const idTarefa = req.params.id 
     const novaTarefa = req.body
-    await objeto.alterar(idTarefa,novaTarefa)
-    res.status(200).json({message: 'Deu bom'})
+    const resultado = await objeto.alterar(idTarefa,novaTarefa)
+    res.status(200).json({message: resultado})
   } catch (error) {
-    res.status(500).json({ message: 'Deu ruim'})
+    res.status(500).json({ message: error})
   }
 });
 
@@ -40,9 +40,9 @@ router.delete('/deletar/:id', async (req, res) => {
   try {
     const idTarefa = req.params.id
     await objeto.deletar(idTarefa)
-    res.status(200).json({message: 'Deu bom'})
+    res.status(200).json({message: 'Deletado com sucesso'})
   } catch (error) {
-    res.status(500).json({ message: 'Deu ruim'})
+    res.status(500).json({ message: error})
   }
 });
 
