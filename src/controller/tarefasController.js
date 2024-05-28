@@ -40,11 +40,12 @@ class tarefasController{
 
     async deletar(idTarefa){
         try{
-            const funcionario = await Funcionario.destroy({
+            const tarefa = await model.destroy({
                 where: {
-                  id: funcId
+                  id: idTarefa
                 }
             })
+            return tarefa
         }catch(error){
             throw new Error(error)
         }
