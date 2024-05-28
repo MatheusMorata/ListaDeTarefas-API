@@ -1,4 +1,4 @@
-const model = require('./model/tarefas')
+const model = require('./model/tarefasModel')
 
 class tarefasController{
 
