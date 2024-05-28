@@ -1,5 +1,5 @@
-const { DataTypes, Model } = require('sequelize')
-const conexao = require('../database/conexao')
+const { DataTypes, Model } = require('sequelize');
+const conexao = require('../database/conexao');
 
 class Tarefas extends Model {}
 
@@ -28,9 +28,9 @@ Tarefas.init({
         allowNull: false
     }
 }, {
-    sequelize: conexao,
+    sequelize: conexao, // Use 'sequelize' e não 'conexao'
     modelName: 'Tarefas',
     timestamps: false
-})
+});
 
-module.exports = Tarefas
+module.exports = Tarefas;
