@@ -9,7 +9,7 @@ router.post('/cadastrar', async (req, res) => {
       await objeto.cadastrar(req.body)
       res.status(200).json({message: 'Cadastro efetuado com sucesso'})
     } catch (error) {
-      res.status(500).json({ message: error})
+      res.status(500).json(error.message)
     }
 });
 
@@ -19,7 +19,7 @@ router.get('/visualizar', async (req, res) => {
     const resultado = await objeto.visualizar()
     res.status(200).json(resultado)
   } catch (error) {
-    res.status(500).json({ message: error})
+    res.status(500).json(error.message)
   }
 });
 
@@ -31,7 +31,7 @@ router.put('/alterar/:id', async (req, res) => {
     await objeto.alterar(idTarefa,novaTarefa)
     res.status(200).json({message: 'Alteracao efetuada com sucesso'})
   } catch (error) {
-    res.status(500).json({ message: error})
+    res.status(500).json(error.message)
   }
 });
 
@@ -42,7 +42,7 @@ router.delete('/deletar/:id', async (req, res) => {
     await objeto.deletar(idTarefa)
     res.status(200).json({message: 'Deletado com sucesso'})
   } catch (error) {
-    res.status(500).json({ message: error})
+    res.status(500).json(error.message)
   }
 });
 
