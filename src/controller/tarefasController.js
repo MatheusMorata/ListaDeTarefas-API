@@ -28,17 +28,15 @@ class tarefasController{
     // Função para alterar uma tarefa no banco de dados
     async alterar(idTarefa, novaTarefa){
         try {
-            if(novaTarefa === null){    
-                throw new Error("Nenhuma tarefa foi passada.")
-            }
             const [linhas,[tarefaAtualizada]] = await model.update(novaTarefa, {
                 where: {
                     id: idTarefa
                 },
                 returning: true 
             });
+            
             if (linhas === 0) {
-                throw new Error("Nenhuma tarefa encontrada com o ID fornecido.")
+                throw new Error("Nenhuma tarefa encontrada com o ID fornecido.");
             } 
         } catch (error) {
             throw new Error(error); 
@@ -47,14 +45,18 @@ class tarefasController{
 
     // Função para deletar uma tarefa no banco de dados
     async deletar(idTarefa){
-        try{
-            await model.destroy({
+        try {
+            const linhas = await model.destroy({
                 where: {
-                  id: idTarefa
+                    id: idTarefa
                 }
-            })
-        }catch(error){
-            throw new Error(error)
+            });
+    
+            if (linhas === 0) {
+                throw new Error("O ID da tarefa fornecido não existe no banco de dados.");
+            }
+        } catch(error) {
+            throw new Error(error);
         }
     }
 }
