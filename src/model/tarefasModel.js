@@ -28,7 +28,7 @@ Tarefas.init({
         allowNull: false
     }
 }, {
-    conexao,
+    sequelize: conexao,
     modelName: 'Tarefas',
     timestamps: false
 });
