@@ -21,7 +21,7 @@ class tarefasController{
 
     async alterar(idTarefa, novaTarefa){
         try {
-            const [linhas,[tarefaAtualizada]] = await Funcionario.update(novaTarefa, {
+            const [linhas,[tarefaAtualizada]] = await model.update(novaTarefa, {
                 where: {
                     id: idTarefa
                 },
