@@ -3,6 +3,7 @@ const express = require('express')
 const server = express() 
 const rotasTarefas = require('./router/rotas')
 const conexao = require('./database/conexao')
+const controller = require('./controller/tarefasController')
 const PORT = process.env.PORT
 const BASE_ROUTE = process.env.BASE_ROUTE
 
