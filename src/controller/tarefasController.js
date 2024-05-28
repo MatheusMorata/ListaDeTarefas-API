@@ -28,13 +28,10 @@ class tarefasController{
                 returning: true 
             });
             if (linhas === 0) {
-                console.log("Nenhuma tarefa encontrada com o ID fornecido.")
-            } else {
-                console.log("Tarefa atualizada com sucesso")
-            }
+                throw new Error("Nenhuma tarefa encontrada com o ID fornecido.")
+            } 
         } catch (error) {
-            console.error("Erro ao atualizar a tarefa", error)
-            throw error; 
+            throw new Error(error); 
         }
     }
 
