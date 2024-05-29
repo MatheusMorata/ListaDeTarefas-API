@@ -2,8 +2,8 @@ const model = require('../model/tarefasModel')
 
 class tarefasController{
 
-    // Função para cadastrar uma tarefa no banco de dados
-    async cadastrar(tarefa){
+    // Função para criar uma tarefa no banco de dados
+    async criar(tarefa){
         try{
             if(tarefa.status !== 'pendente' && tarefa.status && 'em progresso' && tarefa.status !== 'concluida'){
                 throw new Error('Status inválido')
@@ -16,10 +16,10 @@ class tarefasController{
     }
 
     // Função para receber as tarefas do banco de dados
-    async visualizar(){
+    async ler(){
         try{
-            const visualizar = await model.findAll()
-            return visualizar
+            const tarefas = await model.findAll()
+            return tarefas
         }catch(error){
             throw new Error(error)
         }
