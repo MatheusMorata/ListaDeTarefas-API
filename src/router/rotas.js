@@ -4,9 +4,9 @@ const controller = require('../controller/tarefasController')
 const objeto = new controller() 
 
 // Rota para cadastrar uma tarefa
-router.post('/cadastrar', async (req, res) => {
+router.post('/criar', async (req, res) => {
     try {
-      await objeto.cadastrar(req.body)
+      await objeto.criar(req.body)
       res.status(200).json({message: 'Cadastro efetuado com sucesso'})
     } catch (error) {
       res.status(500).json(error.message)
@@ -14,9 +14,9 @@ router.post('/cadastrar', async (req, res) => {
 });
 
 // Rota para visualizar todas as tarefas 
-router.get('/visualizar', async (req, res) => {
+router.get('/ler', async (req, res) => {
   try {
-    const resultado = await objeto.visualizar()
+    const resultado = await objeto.ler()
     res.status(200).json(resultado)
   } catch (error) {
     res.status(500).json(error.message)
