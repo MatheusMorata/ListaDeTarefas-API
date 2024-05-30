@@ -10,9 +10,12 @@ const PORT = process.env.PORT
 const BASE_ROUTE = process.env.BASE_ROUTE
 
 server.use(express.json())
+server.use(bodyParser.json())
+
 
 // Rotas
 server.use(BASE_ROUTE, rotasTarefas)
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 server.listen(PORT, () => {
   console.log(`Servidor online  http://localhost:${PORT}`)
