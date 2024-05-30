@@ -12,6 +12,7 @@ server.use(express.json())
 
 // Rotas
 server.use(BASE_ROUTE, rotasTarefas)
+server.use('/docs', swaggerUi.serve, swaggerUi.setup())
 
 server.listen(PORT, () => {
   console.log(`Servidor online  http://localhost:${PORT}`)
