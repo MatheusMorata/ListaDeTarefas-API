@@ -3,6 +3,9 @@ const express = require('express')
 const server = express() 
 const rotasTarefas = require('./router/rotas')
 const conexao = require('./database/conexao')
+const swaggerUi = require('swagger-ui-express');
+const swaggerFile = require('./swagger-output.json');
+const bodyParser = require('body-parser');
 const PORT = process.env.PORT
 const BASE_ROUTE = process.env.BASE_ROUTE
 
