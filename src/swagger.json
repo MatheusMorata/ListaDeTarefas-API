@@ -1,1 +1,44 @@
-{}
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Tarefas",
+        "description": "Api para CRUD de tarefas",
+        "version": "1.0.0"
+    },
+    "servers":[
+        {
+            "url": "http://localhost:3000/",
+            "description": "Api"
+        }
+    ],
+    "paths":{
+        "/criar": {
+            "post":{
+                "summary": "Criar tarefa",
+                "description": "Essa rota cria uma tarefa",
+                "tag": ["Tarefas"],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Tarefa":{
+                "type":"object",
+                "properties": {
+                    "titulo": {
+                        
+                    }
+                }
+            }
+        }
+    }
+}
