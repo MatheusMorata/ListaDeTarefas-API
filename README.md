@@ -7,3 +7,4 @@
 - Sequelize
 - express
 - swagger-ui-express
+- swagger-autogen
