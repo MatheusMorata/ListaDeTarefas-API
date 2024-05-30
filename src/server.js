@@ -12,7 +12,7 @@ server.use(express.json())
 server.use(BASE_ROUTE, rotasTarefas)
 
 server.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`)
+  console.log(`Servidor online  http://localhost:${PORT}`)
 });
 
 // Conexão com o banco de dados
