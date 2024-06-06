@@ -2,18 +2,18 @@
     "openapi": "3.0.0",
     "info": {
         "title": "Tarefas",
-        "description": "Api para CRUD de tarefas",
+        "description": "API para CRUD de tarefas",
         "version": "1.0.0"
     },
-    "servers":[
+    "servers": [
         {
             "url": "http://localhost:3000/",
-            "description": "Api"
+            "description": "API"
         }
     ],
-    "paths":{
+    "paths": {
         "/criar": {
-            "post":{
+            "post": {
                 "summary": "Criar tarefa",
                 "description": "Essa rota cria uma tarefa",
                 "tags": ["Tarefas"],
@@ -21,9 +21,121 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                     
+                                "$ref": "#/components/schemas/Tarefa"
+                            },
+                            "examples": {
+                                "tarefa": {
+                                    "value": {
+                                        "titulo": "string",
+                                        "descricao": "string",
+                                        "status": "string",
+                                        "dataCriacao": "2024-06-06T13:44:07.458711"
+                                    }
+                                }
                             }
                         }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Cadastro efetuado com sucesso"
+                    },
+                    "500": {
+                        "description": "Mensagem de erro"
+                    }
+                }
+            }
+        },
+        "/ler": {
+            "get": {
+                "summary": "Listar todas as tarefas",
+                "description": "Essa rota retorna todas as tarefas",
+                "tags": ["Tarefas"],
+                "responses": {
+                    "200": {
+                        "description": "Lista de tarefas",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Tarefa"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Mensagem de erro"
+                    }
+                }
+            }
+        },
+        "/alterar/{id}": {
+            "put": {
+                "summary": "Alterar tarefa",
+                "description": "Essa rota altera uma tarefa existente",
+                "tags": ["Tarefas"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Tarefa"
+                            },
+                            "examples": {
+                                "tarefa": {
+                                    "value": {
+                                        "titulo": "string",
+                                        "descricao": "string",
+                                        "status": "string",
+                                        "dataCriacao": "2024-06-06T13:44:07.458711"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Alteração efetuada com sucesso"
+                    },
+                    "500": {
+                        "description": "Mensagem de erro"
+                    }
+                }
+            }
+        },
+        "/deletar/{id}": {
+            "delete": {
+                "summary": "Deletar tarefa",
+                "description": "Essa rota deleta uma tarefa existente",
+                "tags": ["Tarefas"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Deleção efetuada com sucesso"
+                    },
+                    "500": {
+                        "description": "Mensagem de erro"
                     }
                 }
             }
@@ -31,11 +143,21 @@
     },
     "components": {
         "schemas": {
-            "Tarefa":{
-                "type":"object",
+            "Tarefa": {
+                "type": "object",
                 "properties": {
                     "titulo": {
-                        
+                        "type": "string"
+                    },
+                    "descricao": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "dataCriacao": {
+                        "type": "string",
+                        "format": "date-time"
                     }
                 }
             }
