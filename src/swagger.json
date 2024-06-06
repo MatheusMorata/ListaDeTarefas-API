@@ -16,12 +16,12 @@
             "post":{
                 "summary": "Criar tarefa",
                 "description": "Essa rota cria uma tarefa",
-                "tag": ["Tarefas"],
+                "tags": ["Tarefas"],
                 "requestBody": {
                     "content": {
                         "application/json": {
                             "schema": {
-                                
+                                     
                             }
                         }
                     }
