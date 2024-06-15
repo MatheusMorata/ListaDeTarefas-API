@@ -28,7 +28,7 @@ const TaskForm: React.FC = () => {
     e.preventDefault();
     
     try {
-      await axios.post('http://localhost:3000/criar', task);
+      await axios.post('http://localhost:3001/criar', task);
 
       console.log('Tarefa enviada com sucesso:', task);
       setTask({
