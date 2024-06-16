@@ -24,7 +24,7 @@ Tarefas.init({
         allowNull: false
     },
     dataCriacao: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
         allowNull: false
     }
 }, {
