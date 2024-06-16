@@ -9,7 +9,6 @@ const PORT = process.env.PORT
 const BASE_ROUTE = process.env.BASE_ROUTE
 
 server.use(express.json())
-
 // Middleware para permitir CORS
 server.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
