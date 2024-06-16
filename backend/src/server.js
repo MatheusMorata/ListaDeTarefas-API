@@ -13,11 +13,6 @@ server.use(express.json())
 // Rotas
 server.use(BASE_ROUTE, rotasTarefas)
 server.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
-server.use(cors({
-  origin: 'http://localhost:3000',
-  methods: ['GET', 'POST'],
-  allowedHeaders: ['Content-Type'],
-}));
 
 server.listen(PORT, () => {
   console.log(`Servidor online  http://localhost:${PORT}`)
