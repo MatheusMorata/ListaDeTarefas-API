@@ -1,5 +1,6 @@
+// src/components/TaskForm.tsx
+
 import React, { useState } from 'react';
-import axios from 'axios';
 
 interface Task {
   titulo: string;
@@ -24,22 +25,30 @@ const TaskForm: React.FC = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    try {
-      await axios.post('http://localhost:3001/criar', task);
+    // Simulando requisição JSONP usando uma tag <script>
+    const script = document.createElement('script');
+    const endpoint = 'http://localhost:3001/criar';
+    const queryParams = `?callback=handleJSONP&titulo=${encodeURIComponent(task.titulo)}&descricao=${encodeURIComponent(task.descricao)}&status=${encodeURIComponent(task.status)}&dataCriacao=${encodeURIComponent(task.dataCriacao)}`;
 
-      console.log('Tarefa enviada com sucesso:', task);
-      setTask({
-        titulo: '',
-        descricao: '',
-        status: 'pendente',
-        dataCriacao: ''
-      });
-    } catch (error) {
-      console.error('Erro ao enviar tarefa:', error);
-    }
+    script.src = endpoint + queryParams;
+    document.body.appendChild(script);
+
+    // Limpa os campos do formulário após submissão
+    setTask({
+      titulo: '',
+      descricao: '',
+      status: 'pendente',
+      dataCriacao: ''
+    });
+  };
+
+  // Função de callback para manipular a resposta JSONP
+  (window as any).handleJSONP = (response: any) => {
+    console.log('Tarefa enviada com sucesso:', response);
+    // Aqui você pode adicionar lógica adicional para tratar a resposta, se necessário
   };
 
   return (
