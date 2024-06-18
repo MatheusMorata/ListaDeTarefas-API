@@ -29,53 +29,43 @@ git clone https://github.com/MatheusMorata/ListaDeTarefas-API.git'.
 
 - Baixe as dependencias. <b>OBS:</b> Certifique-se de ter o Node.JS e ter acessado o diretório via terminal.
 
-<code>
 
+```
 npm install dotenv
 npm install Sequelize
 npm install pg pg-hstore
 npm install express
 npm install swagger-ui-express
 npm install swagger-autogen
-
-</code>
+```
 
 - Altere o arquivo .env, sua credencias. <b>OBS:</b> Não altere o nome do banco de dados.
 
 - Execute o comando:
 
-<code>
-
+```
 psql -U usuario_banco_de_dados
-
-</code>
+```
 
 - Digite a senha do seu banco de dados.
 
 - Execute o comando:
 
-<code>
 
+```
 \i BD.sql
-
-</code>
+```
 
 - Abra outra terminal acessando novamente o repositório. <b>OBS:</b> Os scripts a seguir só executados apenas no windows.
 
 - Em um, terminal execute o comando
 
-<code>
-
+```
 backend.bat
-
-</code>
+```
 
 - Em outro, execute o comando
 
-<code>
-
+```
 frontend.bat
-
-</code>
-
-
+```
