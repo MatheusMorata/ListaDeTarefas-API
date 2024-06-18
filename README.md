@@ -69,3 +69,7 @@ backend.bat
 ```
 frontend.bat
 ```
+
+## diagrama de arquitetura e fluxo de dados.
+
+<img src="diagrama/Diagrama.png" />
