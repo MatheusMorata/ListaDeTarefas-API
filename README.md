@@ -20,8 +20,11 @@ No frontend, o React é utilizado para criar uma interface de usuário responsiv
 - Realize o clone do repositório em seu computador
 
 
-'git clone https://github.com/MatheusMorata/ListaDeTarefas-API.git'.
+'''
 
+git clone https://github.com/MatheusMorata/ListaDeTarefas-API.git'.
+
+'''
 
 
 - Acesse o repositório via terminal
