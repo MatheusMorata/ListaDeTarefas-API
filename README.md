@@ -41,6 +41,8 @@ npm install swagger-autogen
 
 - Altere o arquivo .env, sua credencias. <b>OBS:</b> Não altere o nome do banco de dados.
 
+- Crie um banco de dados no seu postegresql com o nome tarefas, caso não consiga siga o passo a seguir.
+
 - Execute o comando:
 
 ```
@@ -73,3 +75,11 @@ frontend.bat
 ## diagrama de arquitetura e fluxo de dados.
 
 <img src="diagrama/Diagrama.png" />
+
+## Documentação da api
+
+<p>link da documentação da api</p>
+
+```
+http://localhost:3001/docs
+```
