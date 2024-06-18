@@ -3,15 +3,15 @@ const model = require('../model/tarefasModel')
 class tarefasController{
 
     // Função para criar uma tarefa no banco de dados
-    async criar(tarefa){
-        try{
-            if(tarefa.status !== 'pendente' && tarefa.status && 'em progresso' && tarefa.status !== 'concluida'){
-                throw new Error('Status inválido')
-            }else{
-                await model.create(tarefa)
+    async criar(tarefa) {
+        try {
+            if (tarefa.status !== 'pendente' && tarefa.status !== 'em progresso' && tarefa.status !== 'concluído') {
+                throw new Error('Status inválido');
+            } else {
+                await model.create(tarefa);
             }
-        }catch(error){
-            throw new Error(error)
+        } catch (error) {
+            throw new Error(error);
         }
     }
 
