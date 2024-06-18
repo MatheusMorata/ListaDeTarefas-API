@@ -6,6 +6,7 @@ import './styles.css';
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchTasks();
@@ -26,6 +27,7 @@ function App() {
   };
 
   const handleTaskSubmit = async (newTask) => {
+    setLoading(true); 
     try {
       const response = await fetch('http://localhost:3001/criar', {
         method: 'POST',
@@ -39,12 +41,14 @@ function App() {
         throw new Error('Erro ao criar tarefa. Status: ' + response.status);
       }
 
-      // Atualizar a lista de tarefas após a criação
+
       fetchTasks();
 
     } catch (error) {
       console.error('Erro ao criar tarefa:', error);
       alert('Erro ao criar tarefa. Por favor, tente novamente.');
+    } finally {
+      setLoading(false); 
     }
   };
 
@@ -58,7 +62,6 @@ function App() {
         throw new Error('Erro ao deletar tarefa. Status: ' + response.status);
       }
 
-      // Atualizar a lista de tarefas após a exclusão
       const updatedTasks = tasks.filter(task => task.id !== taskId);
       setTasks(updatedTasks);
 
@@ -82,7 +85,6 @@ function App() {
         throw new Error('Erro ao atualizar tarefa. Status: ' + response.status);
       }
 
-      // Atualizar a lista de tarefas após a atualização
       const updatedTasks = tasks.map(task =>
         task.id === taskId ? { ...task, ...updatedTaskData } : task
       );
@@ -97,7 +99,7 @@ function App() {
   return (
     <div className="container">
       <h1>Lista de Tarefas</h1>
-      <TaskForm onTaskSubmit={handleTaskSubmit} />
+      <TaskForm onTaskSubmit={handleTaskSubmit} loading={loading} /> {/* Passar estado de loading para TaskForm */}
       <TaskList tasks={tasks} onDeleteTask={handleDeleteTask} onUpdateTask={handleUpdateTask} />
     </div>
   );
