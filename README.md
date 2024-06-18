@@ -13,16 +13,16 @@ No frontend, o React é utilizado para criar uma interface de usuário responsiv
 - Node.JS
 - Git
 
-<b>OBS:</b>Realize os downloads das mesmas.
+<b>OBS:</b> Realize os downloads das mesmas.
 
 ## Como rodar?
 
 - Realize o clone do repositório em seu computador
-<code>
 
-git clone https://github.com/MatheusMorata/ListaDeTarefas-API.git
 
-</code>
+'git clone https://github.com/MatheusMorata/ListaDeTarefas-API.git'.
+
+
 
 - Acesse o repositório via terminal
 
