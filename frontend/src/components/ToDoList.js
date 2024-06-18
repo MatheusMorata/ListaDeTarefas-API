@@ -46,7 +46,7 @@ const ToDoList = () => {
 
     const updateToDo = async (id, updatedToDo) => {
         try {
-            await fetch(`http://localhost:3001/atualizar/${id}`, {
+            await fetch(`http://localhost:3001/alterar/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
