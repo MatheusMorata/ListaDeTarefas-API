@@ -13,7 +13,6 @@ Tarefas.init({
     titulo: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true
     },
     descricao: {
         type: DataTypes.STRING,
