@@ -21,9 +21,7 @@ No frontend, o React é utilizado para criar uma interface de usuário responsiv
 
 
 ```
-
 git clone https://github.com/MatheusMorata/ListaDeTarefas-API.git'.
-
 ```
 
 
