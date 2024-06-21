@@ -59,20 +59,24 @@ psql -U usuario_banco_de_dados
 ```
 \i BD.sql
 ```
+- Feche o terminal
 
 - Abra outra terminal acessando novamente o repositório. <b>OBS:</b> Os scripts a seguir são executados apenas no windows.
 
-- Em um, terminal execute o comando:
+- Terminal execute o comando:
 
 ```
 backend.bat
 ```
 
-- Em outro, execute o comando:
+- Agora abra outro terminal, novamente acessando o repositório. Execute os seguintes comando:
 
 ```
+cd frontend
+npm install
 frontend.bat
 ```
+
 
 ## diagrama de arquitetura e fluxo de dados.
 
