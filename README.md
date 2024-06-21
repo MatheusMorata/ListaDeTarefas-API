@@ -13,11 +13,11 @@ No frontend, o React é utilizado para criar uma interface de usuário responsiv
 - Node.JS
 - Git
 
-<b>OBS:</b> Realize os downloads das mesmas.
+<b>OBS:</b> Realize o download dos mesmos.
 
-## Como rodar?
+## Como instalar?
 
-- Realize o clone do repositório em seu computador
+- Faça o clone do repositório em seu computador.
 
 
 ```
@@ -27,7 +27,7 @@ git clone https://github.com/MatheusMorata/ListaDeTarefas-API.git'.
 
 - Acesse o repositório via terminal
 
-- Baixe as dependencias. <b>OBS:</b> Certifique-se de ter o Node.JS e ter acessado o diretório via terminal.
+- Baixe as dependencias. 
 
 
 ```
@@ -39,7 +39,7 @@ npm install swagger-ui-express
 npm install swagger-autogen
 ```
 
-- Altere o arquivo .env, sua credencias. <b>OBS:</b> Não altere o nome do banco de dados.
+- Altere o arquivo .env, com suas credencias. <b>OBS:</b> Não altere o nome do banco de dados.
 
 - Crie um banco de dados no seu postegresql com o nome tarefas, caso não consiga siga o passo a seguir.
 
@@ -58,15 +58,15 @@ psql -U usuario_banco_de_dados
 \i BD.sql
 ```
 
-- Abra outra terminal acessando novamente o repositório. <b>OBS:</b> Os scripts a seguir só executados apenas no windows.
+- Abra outra terminal acessando novamente o repositório. <b>OBS:</b> Os scripts a seguir são executados apenas no windows.
 
-- Em um, terminal execute o comando
+- Em um, terminal execute o comando:
 
 ```
 backend.bat
 ```
 
-- Em outro, execute o comando
+- Em outro, execute o comando:
 
 ```
 frontend.bat
