@@ -32,7 +32,7 @@ git clone https://github.com/MatheusMorata/ListaDeTarefas-API.git'.
 
 ```
 npm install dotenv
-npm install Sequelize
+npm install sequelize
 npm install pg pg-hstore
 npm install express
 npm install swagger-ui-express
