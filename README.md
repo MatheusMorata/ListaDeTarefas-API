@@ -35,8 +35,10 @@ npm install dotenv
 npm install sequelize
 npm install pg pg-hstore
 npm install express
+npm install cors
 npm install swagger-ui-express
 npm install swagger-autogen
+
 ```
 
 - Altere o arquivo .env, com suas credencias. <b>OBS:</b> Não altere o nome do banco de dados.
